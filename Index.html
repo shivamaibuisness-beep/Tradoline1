@@ -1,521 +1,721 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tradeon — Elite Quotex Trading Signals</title>
-<meta name="description" content="Tradeon — Premium Quotex trading signals channel. Join the elite community.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tradeon — Premium Quotex Trading Signals</title>
+  <meta name="description" content="Join Tradeon — the premium Quotex trading channel for high-accuracy signals, real-time analysis, and consistent results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1101384872725791');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1101384872725791&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
-<!-- Meta Pixel / Dataset tracking -->
-<script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1101384872725791');
-  fbq('track', 'PageView');
-</script>
+  <style>
+    :root {
+      --bg-deep: #050508;
+      --bg-card: rgba(18, 18, 28, 0.7);
+      --bg-glass: rgba(255, 255, 255, 0.03);
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --gold: #f0c14b;
+      --gold-light: #ffd76a;
+      --gold-dark: #c9a227;
+      --red-glow: #ff2a2a;
+      --red-soft: #ff4d4d;
+      --text-primary: #f5f5f7;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --success: #22c55e;
+      --gradient-gold: linear-gradient(135deg, #f0c14b 0%, #ffd76a 50%, #c9a227 100%);
+      --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(240, 193, 75, 0.15), transparent);
+      --shadow-gold: 0 0 40px rgba(240, 193, 75, 0.25);
+      --shadow-red: 0 0 30px rgba(255, 42, 42, 0.3);
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-:root{
-  --red:#e8102a; --red-glow:rgba(232,16,42,.55);
-  --gold:#d4af37; --gold-light:#f5e08c;
-  --bg:#050505; --panel:#0d0d0d;
-  --txt:#e8e8e8; --muted:#9a9a9a;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg); color:var(--txt);
-  font-family:'Inter',sans-serif; overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{background:var(--red);color:#fff}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* ambient glow / particles */
-#particles{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
-.glow-orb{position:fixed;border-radius:50%;filter:blur(120px);z-index:0;pointer-events:none}
-.orb1{width:520px;height:520px;background:rgba(232,16,42,.14);top:-160px;left:-140px;animation:drift 14s ease-in-out infinite alternate}
-.orb2{width:420px;height:420px;background:rgba(212,175,55,.10);bottom:-120px;right:-100px;animation:drift 18s ease-in-out infinite alternate-reverse}
-@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(60px,40px) scale(1.12)}}
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
 
-/* navbar */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 5vw;
-  background:linear-gradient(180deg,rgba(5,5,5,.92),rgba(5,5,5,.55) 70%,transparent);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(212,175,55,.12);
-}
-.logo-wrap{display:flex;align-items:center;gap:12px}
-.logo-img{width:46px;height:46px;border-radius:50%;border:2px solid var(--red);
-  box-shadow:0 0 18px var(--red-glow);object-fit:cover}
-.logo-name{font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;
-  letter-spacing:2px;background:linear-gradient(120deg,#fff,var(--gold-light) 45%,var(--gold));
-  -webkit-background-clip:text;background-clip:text;color:transparent}
-.live-badge{display:flex;align-items:center;gap:7px;font-size:.72rem;font-weight:600;
-  letter-spacing:1.5px;color:#4ade80;text-transform:uppercase}
-.live-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;
-  box-shadow:0 0 10px #4ade80;animation:pulse 1.4s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+    /* Background effects */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-/* hero */
-.hero{
-  position:relative;z-index:1;min-height:100vh;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:130px 6vw 70px;
-}
-.hero-logo{
-  width:min(300px,62vw);height:auto;border-radius:50%;
-  border:3px solid var(--red);
-  box-shadow:0 0 60px var(--red-glow),0 0 140px rgba(232,16,42,.25);
-  animation:heroFloat 6s ease-in-out infinite;margin-bottom:38px;
-}
-@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-.kicker{
-  font-size:.78rem;font-weight:600;letter-spacing:5px;text-transform:uppercase;
-  color:var(--gold);margin-bottom:20px;opacity:0;
-}
-h1{
-  font-family:'Playfair Display',serif;font-weight:900;
-  font-size:clamp(2.4rem,7vw,5rem);line-height:1.08;max-width:900px;opacity:0;
-}
-h1 .gold{background:linear-gradient(120deg,#fff 10%,var(--gold-light) 40%,var(--gold) 60%,#fff 90%);
-  background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:shine 4s linear infinite}
-@keyframes shine{to{background-position:220% center}}
-.sub{max-width:620px;color:var(--muted);font-weight:300;font-size:1.06rem;
-  line-height:1.75;margin:26px auto 0;opacity:0}
-.sub b{color:var(--txt);font-weight:600}
+    .bg-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-/* join button */
-.join-btn{
-  position:relative;margin-top:48px;display:inline-flex;align-items:center;gap:14px;
-  padding:20px 52px;border:none;cursor:pointer;border-radius:60px;
-  font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:1.2px;
-  color:#fff;background:linear-gradient(135deg,#ff1e3c,#a8000f);
-  box-shadow:0 8px 40px rgba(232,16,42,.5),inset 0 1px 0 rgba(255,255,255,.25);
-  transition:transform .35s cubic-bezier(.2,.9,.3,1.4),box-shadow .35s;
-  text-decoration:none;opacity:0;
-}
-.join-btn:hover{transform:translateY(-4px) scale(1.04);
-  box-shadow:0 14px 55px rgba(232,16,42,.7),inset 0 1px 0 rgba(255,255,255,.3)}
-.join-btn:active{transform:scale(.97)}
-.join-btn svg{width:22px;height:22px;fill:#fff}
-.ring{position:absolute;inset:-6px;border-radius:60px;border:2px solid rgba(232,16,42,.5);
-  animation:ringPulse 2s ease-out infinite;pointer-events:none}
-@keyframes ringPulse{0%{transform:scale(.95);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+    .bg-glow-1 {
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+    }
 
-.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(24px,6vw,72px);margin-top:64px;opacity:0}
-.stat{text-align:center}
-.stat .num{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;
-  color:var(--gold-light)}
-.stat .lbl{font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-top:6px}
+    .bg-glow-2 {
+      bottom: -100px;
+      right: -100px;
+      background: var(--red-glow);
+      opacity: 0.08;
+    }
 
-.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
-  color:var(--muted);font-size:.68rem;letter-spacing:3px;text-transform:uppercase;opacity:0}
-.scroll-hint::after{content:'';display:block;width:1px;height:34px;margin:10px auto 0;
-  background:linear-gradient(var(--gold),transparent);animation:scrollLine 1.8s infinite}
-@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}
-  51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      background: rgba(5, 5, 8, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-glass);
+      transition: all 0.3s ease;
+    }
 
-/* features */
-.features{position:relative;z-index:1;padding:90px 6vw;max-width:1200px;margin:0 auto}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);
-  font-weight:900;text-align:center;margin-bottom:14px}
-.sec-title .gold{color:var(--gold)}
-.sec-sub{text-align:center;color:var(--muted);font-weight:300;max-width:520px;margin:0 auto 56px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
-.card{
-  position:relative;padding:38px 30px;border-radius:20px;overflow:hidden;
-  background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
-  border:1px solid rgba(212,175,55,.14);
-  transition:transform .45s cubic-bezier(.2,.9,.3,1.2),border-color .45s,box-shadow .45s;
-}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.6}
-.card:hover{transform:translateY(-10px);border-color:rgba(232,16,42,.45);
-  box-shadow:0 22px 50px rgba(0,0,0,.6),0 0 30px rgba(232,16,42,.12)}
-.card .icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
-  background:linear-gradient(135deg,rgba(232,16,42,.22),rgba(212,175,55,.14));
-  border:1px solid rgba(232,16,42,.35);margin-bottom:22px}
-.card .icon svg{width:24px;height:24px;stroke:var(--gold-light);fill:none;stroke-width:1.8}
-.card h3{font-size:1.12rem;font-weight:600;margin-bottom:10px}
-.card p{color:var(--muted);font-size:.9rem;line-height:1.7;font-weight:300}
+    nav.scrolled {
+      padding: 0.75rem 2rem;
+      background: rgba(5, 5, 8, 0.95);
+    }
 
-/* steps */
-.steps{position:relative;z-index:1;padding:80px 6vw 90px;max-width:1100px;margin:0 auto}
-.step-row{display:flex;align-items:flex-start;gap:22px;margin-bottom:34px;max-width:640px}
-.step-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;line-height:1;
-  background:linear-gradient(180deg,var(--gold-light),var(--red));
-  -webkit-background-clip:text;background-clip:text;color:transparent;min-width:56px}
-.step-row h4{font-size:1.05rem;font-weight:600;margin-bottom:6px}
-.step-row p{color:var(--muted);font-size:.9rem;font-weight:300;line-height:1.7}
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-/* final CTA */
-.final-cta{position:relative;z-index:1;text-align:center;padding:100px 6vw 120px}
-.final-cta .hero-logo{width:min(200px,50vw);margin-bottom:30px}
-.disclaimer{max-width:640px;margin:56px auto 0;color:#666;font-size:.72rem;
-  line-height:1.7;font-weight:300}
-footer{position:relative;z-index:1;text-align:center;padding:26px;color:#555;
-  font-size:.72rem;letter-spacing:1.5px;border-top:1px solid rgba(255,255,255,.06)}
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
 
-/* verification overlay */
-#verifyOverlay{
-  position:fixed;inset:0;z-index:1000;display:none;place-items:center;
-  background:rgba(3,3,3,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-}
-#verifyOverlay.show{display:grid}
-.verify-box{
-  width:min(420px,90vw);text-align:center;padding:48px 36px;border-radius:24px;
-  background:linear-gradient(165deg,#121212,#080808);
-  border:1px solid rgba(212,175,55,.2);
-  box-shadow:0 30px 90px rgba(0,0,0,.8),0 0 60px rgba(232,16,42,.1);
-}
-.shield{width:70px;height:70px;margin:0 auto 24px;border-radius:50%;display:grid;place-items:center;
-  background:radial-gradient(circle,rgba(212,175,55,.18),transparent 70%);
-  border:1px solid rgba(212,175,55,.4)}
-.shield svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.6}
-.verify-box h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:10px}
-.verify-box p{color:var(--muted);font-size:.86rem;font-weight:300;line-height:1.7;margin-bottom:28px}
-#holdBtn{
-  width:100%;padding:18px;border:none;border-radius:14px;cursor:pointer;
-  font-family:'Inter',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.8px;color:#fff;
-  background:linear-gradient(135deg,#2a2a2a,#161616);
-  border:1px solid rgba(255,255,255,.12);position:relative;overflow:hidden;
-  transition:transform .2s;
-}
-#holdBtn:active{transform:scale(.98)}
-#holdBtn .fill{position:absolute;inset:0;width:0%;
-  background:linear-gradient(135deg,#ff1e3c,#a8000f);transition:width .1s linear}
-#holdBtn span{position:relative;z-index:1}
-#holdBtn.ready{background:linear-gradient(135deg,#ff1e3c,#a8000f);
-  box-shadow:0 8px 30px rgba(232,16,42,.5)}
-.spinner{width:22px;height:22px;border:3px solid rgba(212,175,55,.25);border-top-color:var(--gold);
-  border-radius:50%;animation:spin .8s linear infinite;margin:0 auto;display:none}
-@keyframes spin{to{transform:rotate(360deg)}}
-#verifyStatus{margin-top:18px;font-size:.75rem;color:var(--muted);min-height:18px;letter-spacing:.5px}
+    .nav-logo img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(240, 193, 75, 0.4);
+      box-shadow: 0 0 15px rgba(240, 193, 75, 0.2);
+    }
 
-@media(max-width:600px){
-  .join-btn{padding:17px 38px;font-size:.95rem}
-  nav{padding:14px 5vw}
-}
-</style>
+    .nav-logo span {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      background: var(--gradient-gold);
+      color: #0a0a0a;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px rgba(240, 193, 75, 0.3);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(240, 193, 75, 0.45);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 1.5rem 4rem;
+      background: var(--gradient-hero);
+    }
+
+    .hero-logo-wrap {
+      position: relative;
+      margin-bottom: 2rem;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-logo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(240, 193, 75, 0.5);
+      box-shadow: 
+        0 0 0 8px rgba(240, 193, 75, 0.08),
+        0 0 60px rgba(240, 193, 75, 0.25),
+        0 0 100px rgba(255, 42, 42, 0.15);
+      transition: transform 0.4s ease;
+    }
+
+    .hero-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(240, 193, 75, 0.1);
+      border: 1px solid rgba(240, 193, 75, 0.3);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      background: linear-gradient(180deg, #ffffff 0%, #f0c14b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 40px rgba(240, 193, 75, 0.3);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      font-weight: 400;
+    }
+
+    .hero-subtitle strong {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.1rem 2.5rem;
+      background: var(--gradient-gold);
+      color: #0a0a0a;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent, rgba(255,255,255,0.3), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .cta-primary:hover::before {
+      transform: translateX(100%);
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(240, 193, 75, 0.5);
+    }
+
+    .cta-primary svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Features */
+    .features {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gradient-gold);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(240, 193, 75, 0.25);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(240, 193, 75, 0.08);
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(240, 193, 75, 0.1);
+      border: 1px solid rgba(240, 193, 75, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 2rem auto 6rem;
+      padding: 0 1.5rem;
+    }
+
+    .cta-banner-inner {
+      background: linear-gradient(135deg, rgba(240, 193, 75, 0.12) 0%, rgba(255, 42, 42, 0.08) 100%);
+      border: 1px solid rgba(240, 193, 75, 0.25);
+      border-radius: 28px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner-inner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(240, 193, 75, 0.08) 0%, transparent 50%);
+      animation: rotate 20s linear infinite;
+    }
+
+    .cta-banner h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    .cta-banner p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid var(--border-glass);
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      nav {
+        padding: 0.85rem 1.25rem;
+      }
+
+      .hero {
+        padding: 7rem 1.25rem 3rem;
+      }
+
+      .hero-logo {
+        width: 140px;
+        height: 140px;
+      }
+
+      .hero-stats {
+        gap: 2rem;
+      }
+
+      .stat-value {
+        font-size: 1.5rem;
+      }
+
+      .cta-primary {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
+
+      .features {
+        padding: 4rem 1.25rem;
+      }
+
+      .cta-banner-inner {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
 
-<canvas id="particles"></canvas>
-<div class="glow-orb orb1"></div>
-<div class="glow-orb orb2"></div>
-
-<!-- Clickjacking / iframe protection -->
-<script>
-if (window.top !== window.self) {
-  try { window.top.location = window.self.location; } catch(e) {
-    document.body.innerHTML = '<div style="display:grid;place-items:center;height:100vh;color:#e8102a;font-family:sans-serif">Access Denied</div>';
-  }
-}
-</script>
-
-<nav>
-  <div class="logo-wrap">
-    <img src="tradeon-logo.jpg" alt="Tradeon" class="logo-img">
-    <span class="logo-name">TRADEON</span>
-  </div>
-  <div class="live-badge"><span class="live-dot"></span> Signals Live</div>
-</nav>
-
-<section class="hero">
-  <img src="tradeon-logo.jpg" alt="Tradeon Logo" class="hero-logo">
-  <div class="kicker">Elite Quotex Trading Community</div>
-  <h1>Trade With Precision.<br><span class="gold">Win With Confidence.</span></h1>
-  <p class="sub">Join <b>Tradeon</b> — the premium channel delivering high-accuracy Quotex signals, live market analysis, and expert trade setups every single day.</p>
-  <a href="#" class="join-btn" id="mainJoin">
-    <span class="ring"></span>
-    <svg viewBox="0 0 24 24"><path d="M9.04 15.31l-.38 5.32c.55 0 .79-.24 1.08-.52l2.6-2.48 5.38 3.94c.99.55 1.69.26 1.96-.9L23.9 4.6c.32-1.45-.52-2.02-1.48-1.66L1.7 10.9c-1.42.55-1.4 1.34-.24 1.7l5.36 1.67L18.74 6.7c.58-.38 1.1-.17.67.21L9.04 15.31z"/></svg>
-    JOIN CHANNEL FREE
-  </a>
-  <div class="stats" id="stats">
-    <div class="stat"><div class="num" data-count="12500">0</div><div class="lbl">Members</div></div>
-    <div class="stat"><div class="num" data-count="92">0</div><div class="lbl">Win Rate %</div></div>
-    <div class="stat"><div class="num" data-count="60">0</div><div class="lbl">Daily Signals</div></div>
-    <div class="stat"><div class="num" data-count="24">0</div><div class="lbl">Live Support</div></div>
-  </div>
-  <div class="scroll-hint">Scroll</div>
-</section>
-
-<section class="features">
-  <h2 class="sec-title">Why Traders Choose <span class="gold">Tradeon</span></h2>
-  <p class="sec-sub">Everything you need to trade Quotex with an edge — in one channel.</p>
-  <div class="cards">
-    <div class="card">
-      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
-      <h3>High-Accuracy Signals</h3>
-      <p>Carefully analyzed OTC & live market signals with clear entry, direction, and expiry — delivered before the move.</p>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="https://plain-apac-prod-public.komododecks.com/202610/03/M1vfWJSS12NSGPB1mnWZ/image.jpg" alt="Tradeon Logo">
+        <span>TRADEON</span>
+      </a>
+      <a href="https://telegram.me/+yDC-vz9a6UhmYmI0" class="nav-cta" target="_blank" rel="noopener" onclick="fbq('track', 'Lead');">
+        Join Channel
+      </a>
     </div>
-    <div class="card">
-      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-      <h3>Real-Time Alerts</h3>
-      <p>Instant Telegram notifications the moment a setup forms. Never miss a trading opportunity again.</p>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-logo-wrap animate-in">
+      <img src="https://plain-apac-prod-public.komododecks.com/202610/03/M1vfWJSS12NSGPB1mnWZ/image.jpg" alt="Tradeon" class="hero-logo">
     </div>
-    <div class="card">
-      <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <h3>Pro Trader Community</h3>
-      <p>Learn alongside thousands of traders. Share charts, strategies, and results in a focused, spam-free environment.</p>
+    
+    <div class="hero-badge animate-in delay-1">
+      Live Quotex Signals
     </div>
-    <div class="card">
-      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <h3>Risk Management First</h3>
-      <p>Every signal comes with money-management guidance — lot sizing, martingale limits, and session filters.</p>
+    
+    <h1 class="animate-in delay-2">TRADEON</h1>
+    
+    <p class="hero-subtitle animate-in delay-3">
+      Premium <strong>Quotex</strong> trading signals with high accuracy.  
+      Real-time analysis • Expert entries • Consistent results.
+    </p>
+    
+    <a href="https://telegram.me/+yDC-vz9a6UhmYmI0" class="cta-primary animate-in delay-4" target="_blank" rel="noopener" onclick="fbq('track', 'Lead');">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+      Join Free on Telegram
+    </a>
+
+    <div class="hero-stats animate-in delay-5">
+      <div class="stat-item">
+        <div class="stat-value">90%+</div>
+        <div class="stat-label">Win Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">24/7</div>
+        <div class="stat-label">Live Signals</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">VIP</div>
+        <div class="stat-label">Support</div>
+      </div>
     </div>
-    <div class="card">
-      <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-      <h3>All Devices Covered</h3>
-      <p>Trade from mobile or desktop. Signals are formatted for quick execution on Quotex in seconds.</p>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="section-header">
+      <h2>Why Trade with Tradeon?</h2>
+      <p>Everything you need to trade Quotex smarter and more confidently.</p>
     </div>
-    <div class="card">
-      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <h3>100% Free to Join</h3>
-      <p>No subscriptions, no hidden fees. Tap join, verify, and start receiving signals immediately.</p>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>High Accuracy Signals</h3>
+        <p>Carefully filtered Quotex entries with strong confluence. Focused on quality over quantity for consistent results.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Real-Time Alerts</h3>
+        <p>Instant signal delivery on Telegram the moment a high-probability setup appears. Never miss an opportunity.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Clear Entry & Exit</h3>
+        <p>Every signal includes precise entry zone, stop levels, and target — so you always know exactly what to do.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Risk Management</h3>
+        <p>Built-in guidance on position sizing and risk control to help protect your capital while growing it steadily.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>Active Community</h3>
+        <p>Join traders who share the same goal. Discuss setups, get answers, and stay motivated every day.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3>Proven Results</h3>
+        <p>Transparent performance tracking. See the results for yourself and trade with confidence.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="steps">
-  <h2 class="sec-title">Get Started In <span class="gold">3 Steps</span></h2>
-  <p class="sec-sub">From zero to your first signal in under a minute.</p>
-  <div class="step-row"><div class="step-num">01</div><div><h4>Tap the Join Button</h4><p>Hit "Join Channel Free" anywhere on this page — desktop or mobile.</p></div></div>
-  <div class="step-row"><div class="step-num">02</div><div><h4>Pass Quick Verification</h4><p>Hold the button for 2 seconds so we know you're human — this keeps the channel free of bots.</p></div></div>
-  <div class="step-row"><div class="step-num">03</div><div><h4>Open Telegram & Trade</h4><p>You'll be redirected straight to the Tradeon channel. Hit join and watch for the next signal.</p></div></div>
-</section>
+  <!-- Final CTA -->
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Ready to Level Up Your Trading?</h2>
+      <p>Join Tradeon today and start receiving premium Quotex signals.</p>
+      <a href="https://telegram.me/+yDC-vz9a6UhmYmI0" class="cta-primary" target="_blank" rel="noopener" onclick="fbq('track', 'Lead');">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+        Join Tradeon Now
+      </a>
+    </div>
+  </section>
 
-<section class="final-cta">
-  <img src="tradeon-logo.jpg" alt="Tradeon" class="hero-logo">
-  <h2 class="sec-title">Your Edge Starts <span class="gold">Now</span></h2>
-  <p class="sec-sub">Spots in the channel are limited to keep signal quality high.</p>
-  <a href="#" class="join-btn" id="bottomJoin">
-    <span class="ring"></span>
-    <svg viewBox="0 0 24 24"><path d="M9.04 15.31l-.38 5.32c.55 0 .79-.24 1.08-.52l2.6-2.48 5.38 3.94c.99.55 1.69.26 1.96-.9L23.9 4.6c.32-1.45-.52-2.02-1.48-1.66L1.7 10.9c-1.42.55-1.4 1.34-.24 1.7l5.36 1.67L18.74 6.7c.58-.38 1.1-.17.67.21L9.04 15.31z"/></svg>
-    JOIN TRADEON NOW
-  </a>
-  <p class="disclaimer">Risk Warning: Trading binary options and OTC markets involves substantial risk of loss and is not suitable for every investor. Past performance of signals does not guarantee future results. Never trade with money you cannot afford to lose. Tradeon provides educational content and opinions, not financial advice.</p>
-</section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Tradeon • Premium Quotex Trading Channel</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://telegram.me/+yDC-vz9a6UhmYmI0" target="_blank" rel="noopener">Join on Telegram</a>
+    </p>
+    <p style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.6;">
+      Trading involves risk. Past performance is not indicative of future results. Trade responsibly.
+    </p>
+  </footer>
 
-<footer>© 2026 TRADEON — ALL RIGHTS RESERVED</footer>
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
 
-<!-- HUMAN VERIFICATION (bot / fake click protection) -->
-<div id="verifyOverlay">
-  <div class="verify-box">
-    <div class="shield"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-    <h2>Human Verification</h2>
-    <p>To protect our community from fake & bot traffic, please <b style="color:#e8e8e8">hold the button for 2 seconds</b>.</p>
-    <button id="holdBtn"><div class="fill" id="holdFill"></div><span id="holdLabel">HOLD TO VERIFY</span></button>
-    <div class="spinner" id="vSpinner"></div>
-    <div id="verifyStatus"></div>
-  </div>
-</div>
-
-<script>
-/* BOT / FAKE CLICK PROTECTION ENGINE */
-(function () {
-  'use strict';
-
-  const TG_LINK = 'https://telegram.me/+yDC-vz9a6UhmYmI0';
-  const state = {
-    suspicion: 0,
-    clickTimes: [],
-    verified: false,
-    minDwell: 1200,
-    t0: Date.now()
-  };
-
-  /* Signal 1: headless / automated browser markers */
-  const headlessFlags = [];
-  if (navigator.webdriver) headlessFlags.push('webdriver');
-  if (/HeadlessChrome|PhantomJS|puppeteer|selenium|webdriver/i.test(navigator.userAgent)) headlessFlags.push('ua');
-  if (window.callPhantom || window._phantom || window.__nightmare) headlessFlags.push('phantom');
-  if (!navigator.plugins || navigator.plugins.length === 0) headlessFlags.push('no-plugins');
-  if (!navigator.languages || navigator.languages.length === 0) headlessFlags.push('no-languages');
-  if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 1) headlessFlags.push('single-core');
-  if (window.outerWidth === 0 || window.outerHeight === 0) headlessFlags.push('no-window');
-  try {
-    const gl = document.createElement('canvas').getContext('webgl');
-    const dbg = gl && gl.getExtension('WEBGL_debug_renderer_info');
-    const renderer = dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : '';
-    if (/SwiftShader|llvmpipe|Software/i.test(renderer)) headlessFlags.push('software-gl');
-  } catch (e) {}
-  state.suspicion += Math.min(60, headlessFlags.length * 15);
-
-  /* Signal 2: impossible interaction timing */
-  function registerClick() {
-    const now = Date.now();
-    state.clickTimes.push(now);
-    const recent = state.clickTimes.filter(t => now - t < 2000);
-    if (recent.length >= 4) state.suspicion += 40;
-    if (now - state.t0 < state.minDwell) state.suspicion += 25;
-    if (!state.mouseMoved && !('ontouchstart' in window)) state.suspicion += 20;
-    if (headlessFlags.length > 0) return block();
-    if (state.suspicion >= 60) return block();
-  }
-
-  let blockShown = false;
-  function block() {
-    if (blockShown) return;
-    blockShown = true;
-    const box = document.querySelector('.verify-box');
-    box.innerHTML =
-      '<div class="shield"><svg viewBox="0 0 24 24" style="stroke:#e8102a"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M4 4l16 16"/></svg></div>' +
-      '<h2 style="color:#e8102a">Access Blocked</h2>' +
-      '<p>Automated or fake click activity was detected.<br>Please open this page in a normal browser (Chrome / Safari) to continue.</p>';
-    overlay.classList.add('show');
-  }
-
-  /* Signal 3: mouse behaviour sampling */
-  let moveCount = 0;
-  document.addEventListener('mousemove', () => {
-    moveCount++;
-    if (moveCount > 6) state.mouseMoved = true;
-  }, { passive: true });
-
-  /* Verification overlay + hold-to-verify */
-  const overlay = document.getElementById('verifyOverlay');
-  const holdBtn = document.getElementById('holdBtn');
-  const holdFill = document.getElementById('holdFill');
-  const holdLabel = document.getElementById('holdLabel');
-  const vSpinner = document.getElementById('vSpinner');
-  const vStatus = document.getElementById('verifyStatus');
-  const HOLD_MS = 2000;
-  let holdStart = null, holdRAF = null;
-
-  function openVerify(e) {
-    if (e) e.preventDefault();
-    if (state.verified) { go(); return; }
-    registerClick();
-    if (blockShown) return;
-    overlay.classList.add('show');
-  }
-
-  function startHold(e) {
-    e.preventDefault();
-    holdStart = performance.now();
-    tick();
-  }
-  function tick() {
-    if (holdStart === null) return;
-    const p = Math.min(1, (performance.now() - holdStart) / HOLD_MS);
-    holdFill.style.width = (p * 100) + '%';
-    holdLabel.textContent = p < 1 ? 'HOLD... ' + Math.round(p * 100) + '%' : 'VERIFIED ✓';
-    if (p >= 1) { completeVerify(); return; }
-    holdRAF = requestAnimationFrame(tick);
-  }
-  function cancelHold() {
-    if (state.verified) return;
-    holdStart = null;
-    cancelAnimationFrame(holdRAF);
-    holdFill.style.width = '0%';
-    holdLabel.textContent = 'HOLD TO VERIFY';
-  }
-  function completeVerify() {
-    state.verified = true;
-    holdBtn.classList.add('ready');
-    vSpinner.style.display = 'block';
-    vStatus.textContent = 'Verification passed. Connecting to secure channel...';
-    if (typeof fbq === 'function') {
-      fbq('track', 'Lead');
-      fbq('trackCustom', 'HumanVerified', { channel: 'Tradeon' });
-    }
-    setTimeout(go, 900);
-  }
-  function go() {
-    if (typeof fbq === 'function') fbq('trackCustom', 'ChannelJoinClick', { channel: 'Tradeon' });
-    window.open(TG_LINK, '_blank');
-    overlay.classList.remove('show');
-  }
-
-  holdBtn.addEventListener('pointerdown', startHold);
-  holdBtn.addEventListener('pointerup', cancelHold);
-  holdBtn.addEventListener('pointerleave', cancelHold);
-  holdBtn.addEventListener('contextmenu', e => e.preventDefault());
-
-  document.getElementById('mainJoin').addEventListener('click', openVerify);
-  document.getElementById('bottomJoin').addEventListener('click', openVerify);
-  document.addEventListener('contextmenu', e => e.preventDefault());
-})();
-
-/* VISUALS — particle canvas, counters, entrance animations */
-(function () {
-  const c = document.getElementById('particles'), ctx = c.getContext('2d');
-  let W, H, parts = [];
-  function resize() {
-    W = c.width = innerWidth; H = c.height = innerHeight;
-    parts = Array.from({ length: Math.min(70, W / 18) }, () => ({
-      x: Math.random() * W, y: Math.random() * H,
-      r: Math.random() * 1.6 + .4,
-      vx: (Math.random() - .5) * .25, vy: -Math.random() * .35 - .08,
-      gold: Math.random() > .5
-    }));
-  }
-  resize(); addEventListener('resize', resize);
-  (function loop() {
-    ctx.clearRect(0, 0, W, H);
-    for (const p of parts) {
-      p.x += p.vx; p.y += p.vy;
-      if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
-      if (p.x < -10) p.x = W + 10; if (p.x > W + 10) p.x = -10;
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = p.gold ? 'rgba(212,175,55,.5)' : 'rgba(232,16,42,.45)';
-      ctx.fill();
-    }
-    requestAnimationFrame(loop);
-  })();
-
-  /* entrance timeline */
-  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-  tl.from('.hero-logo', { scale: .6, opacity: 0, duration: 1, ease: 'back.out(1.6)' })
-    .to('.kicker', { opacity: 1, y: 0, duration: .7 }, '-=.3')
-    .to('h1', { opacity: 1, duration: .9 }, '-=.35')
-    .to('.sub', { opacity: 1, duration: .8 }, '-=.5')
-    .to('.join-btn', { opacity: 1, duration: .7 }, '-=.4')
-    .to('#stats', { opacity: 1, duration: .8 }, '-=.3')
-    .to('.scroll-hint', { opacity: 1, duration: .6 }, '-=.3');
-
-  /* animated counters */
-  const nums = document.querySelectorAll('.stat .num');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (!en.isIntersecting) return;
-      const el = en.target, target = +el.dataset.count;
-      io.unobserve(el);
-      gsap.to({ v: 0 }, {
-        v: target, duration: 2, ease: 'power2.out',
-        onUpdate: function () {
-          el.textContent = Math.round(this.targets()[0].v).toLocaleString() + (target >= 1000 ? '+' : '');
+    // Track CTA clicks more reliably
+    document.querySelectorAll('a[href*="telegram.me"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
         }
       });
     });
-  }, { threshold: .5 });
-  nums.forEach(n => io.observe(n));
-
-  /* scroll reveals */
-  const revealIO = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (en.isIntersecting) {
-        gsap.to(en.target, { opacity: 1, y: 0, duration: .8, ease: 'power3.out' });
-        revealIO.unobserve(en.target);
-      }
-    });
-  }, { threshold: .15 });
-  document.querySelectorAll('.card, .step-row').forEach(el => {
-    gsap.set(el, { opacity: 0, y: 40 });
-    revealIO.observe(el);
-  });
-})();
-</script>
+  </script>
 </body>
 </html>
